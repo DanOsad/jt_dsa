@@ -12,7 +12,7 @@ class Checker:
         for i, test in enumerate(self.tests, 1):
             inputs = test.get('input')
             solution = test.get('solution')
-            result = self.solver_func(inputs)
+            result = self.solver_func(*inputs)
             passed = result == solution
             print(f'Test {i}) Expected {solution} | Got {result} -> {self.pass_fail(passed)}')
 
